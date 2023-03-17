@@ -7,9 +7,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        //TODO: This will be placed in a constant file later
         title: const Text('Home Page'),
       ),
       body: const Center(
+        //TODO: This will be placed in a constant file later
         child: Text('It is working!'),
       ),
     );
