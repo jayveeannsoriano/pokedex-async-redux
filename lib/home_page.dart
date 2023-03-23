@@ -2,14 +2,16 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex_async_redux/state/action/pokemon_actions.dart';
 import 'package:pokedex_async_redux/state/app_state.dart';
+import 'package:pokedex_async_redux/utils/constants.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //TODO: This is an alternative approach for connector. This will be replaced later
+    //TODO: This is are alternative approaches for connector. This will be replaced later
     StoreProvider.dispatch<AppState>(context, GetPokemonsAction());
+    StoreProvider.dispatch<AppState>(context, GetPokemonDetailsAction(pokemonName: pokemonNameInput));
 
     return MaterialApp(
       title: 'Flutter Demo',
