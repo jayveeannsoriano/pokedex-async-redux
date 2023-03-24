@@ -7,8 +7,6 @@ const String pokemonLimit = '151';
 const pokemonNameInput = 'jigglypuff';
 
 const String pokemonOverviewTitle = 'Pokemon Overview';
-const gridViewPadding = EdgeInsets.all(10.0);
-const int gridCount = 2;
 const urlSplitter = '/';
 const int idIndex = 6;
 const indexKey = '[index]';

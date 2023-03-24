@@ -17,8 +17,8 @@ class PokemonOverviewPage extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text(pokemonOverviewTitle)),
         body: GridView.builder(
-          padding: gridViewPadding,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: gridCount),
+          padding: const EdgeInsets.all(10.0),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemCount: pokemons.length,
           itemBuilder: (_, index) {
             final pokemon = pokemons[index];
