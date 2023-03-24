@@ -9,7 +9,5 @@ class VerticalSpace extends StatelessWidget {
   final double spacing;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(height: spacing);
-  }
+  Widget build(BuildContext context) => SizedBox(height: spacing);
 }

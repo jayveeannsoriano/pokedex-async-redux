@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 
 class PokemonTileCard extends StatelessWidget {
   const PokemonTileCard({
-    Key? key,
     required this.pokemon,
+    Key? key,
   }) : super(key: key);
 
   final Pokemon pokemon;
@@ -15,7 +15,7 @@ class PokemonTileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pokemonId = pokemon.url.split(urlSplitter)[idIndex];
-    final pokemonImageUrl = pokemonImageUrlPath.replaceAll(indexUrlReplace, pokemonId);
+    final pokemonImageUrl = pokemonImageUrlPath.replaceAll(indexKey, pokemonId);
     final pokemonName = pokemon.name.capitalize();
 
     return Column(
