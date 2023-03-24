@@ -11,7 +11,9 @@ const gridViewPadding = EdgeInsets.all(10.0);
 const int gridCount = 2;
 const urlSplitter = '/';
 const int idIndex = 6;
+const indexUrlReplace = 'index';
 const double imageWidth = 200.0;
 const double imageHeight = 130.0;
 const double gridContentSpacing = 20.0;
-const pokemonImageUrlPath = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/';
+const pokemonImageUrlPath =
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/index.png';
