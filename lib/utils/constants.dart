@@ -16,3 +16,4 @@ const pokemonImageUrlPath =
 
 const String errorMessage = 'Something went wrong!';
 const String emptyPokemonsLabel = 'No Pokemons Available';
+const String emptyString = '';
