@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 const String pokemonOffSet = '0';
 const String pokemonLimit = '151';
 
@@ -17,5 +15,4 @@ const pokemonImageUrlPath =
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/[index].png';
 
 const String errorMessage = 'Something went wrong!';
-const String emptyListErrorMessage = 'No Pokemons Available';
-final scaffoldKey = GlobalKey<ScaffoldMessengerState>();
+const String emptyPokemonsLabel = 'No Pokemons Available';
