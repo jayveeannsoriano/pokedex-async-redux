@@ -15,6 +15,7 @@ class PokemonOverviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scaffoldMessengerKey: scaffoldKey,
       home: Scaffold(
         appBar: AppBar(title: const Text(pokemonOverviewTitle)),
         body: pokemons.when(
@@ -28,7 +29,14 @@ class PokemonOverviewPage extends StatelessWidget {
             },
           ),
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (errorMessage) => Center(child: Text(errorMessage!)),
+          error: (errorMessage) {
+            final SnackBar snackBar = SnackBar(
+              content: Text(errorMessage!),
+              duration: const Duration(seconds: 5),
+            );
+            scaffoldKey.currentState?.showSnackBar(snackBar);
+            return const Center(child: Text(emptyListErrorMessage));
+          },
         ),
       ),
     );

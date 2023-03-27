@@ -16,7 +16,6 @@ class AppState with _$AppState {
 
     //ignored by state
     @Default(Wait.empty) @JsonKey(ignore: true) Wait wait,
-
   }) = _AppState;
 
   factory AppState.fromJson(Map<String, dynamic> json) => _$AppStateFromJson(json);
