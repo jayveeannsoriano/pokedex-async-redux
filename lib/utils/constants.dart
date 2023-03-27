@@ -15,3 +15,5 @@ const double imageHeight = 130.0;
 const double gridContentSpacing = 20.0;
 const pokemonImageUrlPath =
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/[index].png';
+
+const String errorMessage = 'Something went wrong!';
