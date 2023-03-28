@@ -21,8 +21,10 @@ class GetPokemonsAction extends LoadingAction {
 }
 
 /// Get pokemon details based on name input from pokemon API
-class GetPokemonDetailsAction extends ReduxAction<AppState> {
-  GetPokemonDetailsAction({required this.pokemonName});
+class GetPokemonDetailsAction extends LoadingAction {
+  static const key = 'get-pokemon-details-action';
+
+  GetPokemonDetailsAction({required this.pokemonName}) : super(actionKey: key);
 
   final String pokemonName;
 
@@ -32,4 +34,10 @@ class GetPokemonDetailsAction extends ReduxAction<AppState> {
 
     return state.copyWith(pokemonDetails: pokemonDetails);
   }
+}
+
+/// Clears the state when going back to the Pokemon Overview Page from Pokemon Details Page
+class ClearPokemonDetailsAction extends ReduxAction<AppState> {
+  @override
+  AppState reduce() => state.copyWith(pokemonDetails: null);
 }
