@@ -31,8 +31,7 @@ class PokemonStatsView extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           itemCount: stats.length,
           itemBuilder: (context, index) {
-            final stat = stats[index].stat;
-            final baseStat = stats[index].baseStat;
+            final pokemonStat = stats[index];
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
@@ -41,7 +40,7 @@ class PokemonStatsView extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        stat.name.toUpperCase(),
+                        pokemonStat.stat.name.toUpperCase(),
                         style: const TextStyle(
                           height: 2.5,
                           color: statNameFontColor,
@@ -54,7 +53,7 @@ class PokemonStatsView extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        baseStat.toString(),
+                        pokemonStat.baseStat.toString(),
                         textAlign: TextAlign.center,
                       )
                     ],

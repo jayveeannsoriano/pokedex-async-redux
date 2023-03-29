@@ -16,8 +16,8 @@ class PokemonDetailsPage extends StatelessWidget {
     super.key,
   });
 
-  final Async<PokemonDetails> pokemonDetails;
   final Pokemon pokemon;
+  final Async<PokemonDetails> pokemonDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,11 @@ class PokemonDetailsPage extends StatelessWidget {
                   const VerticalSpace(spacing: 20.0),
                   PokemonAbilitiesView(abilities: data.abilities),
                   const VerticalSpace(spacing: 25.0),
-                  PokemonPhysicalStatsView(physicalStats: data),
+                  PokemonPhysicalStatsView(
+                    pokemonHeight: '${data.height}',
+                    pokemonWeight: '${data.weight}',
+                    pokemonBaseExp: '${data.baseExperience}',
+                  ),
                   const VerticalSpace(spacing: 25.0),
                   PokemonStatsView(stats: data.stats),
                   const VerticalSpace(spacing: 30.0),

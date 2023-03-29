@@ -1,4 +1,3 @@
-import 'package:pokedex_async_redux/api/model/model.dart';
 import 'package:pokedex_async_redux/features/pokemon_details/widgets/physical_stats_item.dart';
 import 'package:pokedex_async_redux/utils/colors.dart';
 import 'package:pokedex_async_redux/utils/constants.dart';
@@ -6,11 +5,15 @@ import 'package:flutter/material.dart';
 
 class PokemonPhysicalStatsView extends StatelessWidget {
   const PokemonPhysicalStatsView({
-    required this.physicalStats,
+    required this.pokemonHeight,
+    required this.pokemonWeight,
+    required this.pokemonBaseExp,
     Key? key,
   }) : super(key: key);
 
-  final PokemonDetails physicalStats;
+  final String pokemonHeight;
+  final String pokemonWeight;
+  final String pokemonBaseExp;
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +34,9 @@ class PokemonPhysicalStatsView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          PhysicalStatsItem(physicalStats: '${physicalStats.height}', statLabel: heightTextLabel),
-          PhysicalStatsItem(physicalStats: '${physicalStats.weight}', statLabel: weightTextLabel),
-          PhysicalStatsItem(physicalStats: '${physicalStats.baseExperience}', statLabel: baseExpTextLabel),
+          PhysicalStatsItem(physicalStats: pokemonHeight, statLabel: heightTextLabel),
+          PhysicalStatsItem(physicalStats: pokemonWeight, statLabel: weightTextLabel),
+          PhysicalStatsItem(physicalStats: pokemonBaseExp, statLabel: baseExpTextLabel),
         ],
       ),
     );
