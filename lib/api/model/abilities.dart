@@ -7,7 +7,7 @@ part 'abilities.g.dart';
 @freezed
 class Abilities with _$Abilities {
   factory Abilities({
-    @JsonKey(name: 'ability') AbilityDetails? ability,
+    @JsonKey(name: 'ability') required AbilityDetails ability,
   }) = _Abilities;
 
   factory Abilities.fromJson(Map<String, dynamic> json) => _$AbilitiesFromJson(json);

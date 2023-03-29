@@ -1,22 +1,22 @@
-import 'package:pokedex_async_redux/widgets/widgets.dart';
+import 'package:pokedex_async_redux/api/model/model.dart';
+import 'package:pokedex_async_redux/utils/string_extensions.dart';
+import 'package:pokedex_async_redux/widgets/spacing.dart';
 import 'package:flutter/material.dart';
 
 class PokemonProfileCard extends StatelessWidget {
   const PokemonProfileCard({
+    required this.pokemon,
     Key? key,
-    required this.pokemonName,
-    required this.pokemonImage,
   }) : super(key: key);
 
-  final String pokemonName;
-  final String pokemonImage;
+  final Pokemon pokemon;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          pokemonName.toUpperCase(),
+          pokemon.name.toUpperCase(),
           style: const TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
@@ -25,7 +25,7 @@ class PokemonProfileCard extends StatelessWidget {
         SizedBox(
           width: 200.0,
           height: 200.0,
-          child: Image.network(pokemonImage),
+          child: Image.network(pokemon.url.toPokemonImageUrl),
         ),
         const VerticalSpace(spacing: 30.0),
       ],

@@ -7,7 +7,7 @@ part 'moves.g.dart';
 @freezed
 class Moves with _$Moves {
   factory Moves({
-    @JsonKey(name: 'move') MoveDetails? move,
+    @JsonKey(name: 'move') required MoveDetails move,
   }) = _Moves;
 
   factory Moves.fromJson(Map<String, dynamic> json) => _$MovesFromJson(json);

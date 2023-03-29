@@ -1,11 +1,12 @@
-import 'package:pokedex_async_redux/widgets/widgets.dart';
+import 'package:pokedex_async_redux/utils/colors.dart';
+import 'package:pokedex_async_redux/utils/constants.dart';
+import 'package:pokedex_async_redux/widgets/spacing.dart';
 import 'package:pokedex_async_redux/api/model/model.dart';
-import 'package:pokedex_async_redux/utils/utils.dart';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 
-class PokemonMovesList extends StatelessWidget {
-  const PokemonMovesList({
+class PokemonMovesView extends StatelessWidget {
+  const PokemonMovesView({
     required this.moves,
     super.key,
   });
@@ -41,7 +42,7 @@ class PokemonMovesList extends StatelessWidget {
               labelPadding: const EdgeInsets.symmetric(horizontal: 10.0),
               label: FractionallySizedBox(
                 widthFactor: 0.94,
-                child: Text(move?.name.capitalize() ?? emptyString),
+                child: Text(move.name.capitalize()),
               ),
             );
           },

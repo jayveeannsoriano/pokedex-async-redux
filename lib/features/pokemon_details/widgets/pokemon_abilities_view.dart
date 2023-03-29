@@ -1,11 +1,11 @@
-import 'package:dartx/dartx.dart';
 import 'package:pokedex_async_redux/api/model/abilities.dart';
-import 'package:flutter/material.dart';
-import 'package:pokedex_async_redux/utils/color_constants.dart';
+import 'package:pokedex_async_redux/utils/colors.dart';
 import 'package:pokedex_async_redux/utils/constants.dart';
+import 'package:dartx/dartx.dart';
+import 'package:flutter/material.dart';
 
-class PokemonAbilitiesList extends StatelessWidget {
-  const PokemonAbilitiesList({
+class PokemonAbilitiesView extends StatelessWidget {
+  const PokemonAbilitiesView({
     required this.abilities,
     Key? key,
   }) : super(key: key);
@@ -25,7 +25,7 @@ class PokemonAbilitiesList extends StatelessWidget {
                   backgroundColor: abilityChipIconBackgroundColor,
                   backgroundImage: NetworkImage(abilityChipIconImagePath),
                 ),
-                label: Text(ability.ability?.name.capitalize() ?? emptyString),
+                label: Text(ability.ability.name.capitalize()),
               ),
             ),
           )

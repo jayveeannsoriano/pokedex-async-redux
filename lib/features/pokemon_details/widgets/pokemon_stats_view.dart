@@ -1,10 +1,11 @@
 import 'package:pokedex_async_redux/api/model/model.dart';
-import 'package:pokedex_async_redux/utils/utils.dart';
+import 'package:pokedex_async_redux/utils/colors.dart';
+import 'package:pokedex_async_redux/utils/constants.dart';
 import 'package:pokedex_async_redux/widgets/spacing.dart';
 import 'package:flutter/material.dart';
 
-class PokemonStatsList extends StatelessWidget {
-  const PokemonStatsList({
+class PokemonStatsView extends StatelessWidget {
+  const PokemonStatsView({
     required this.stats,
     super.key,
   });
