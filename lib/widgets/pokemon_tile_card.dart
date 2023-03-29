@@ -1,5 +1,7 @@
 import 'package:pokedex_async_redux/api/model/model.dart';
+import 'package:pokedex_async_redux/features/pokemon_details/pokemon_details_connector.dart';
 import 'package:pokedex_async_redux/utils/constants.dart';
+import 'package:pokedex_async_redux/utils/string_extensions.dart';
 import 'package:pokedex_async_redux/widgets/spacing.dart';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
@@ -14,20 +16,29 @@ class PokemonTileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pokemonId = pokemon.url.split(urlSplitter)[idIndex];
-    final pokemonImageUrl = pokemonImageUrlPath.replaceAll(indexKey, pokemonId);
     final pokemonName = pokemon.name.capitalize();
 
-    return Column(
-      children: [
-        SizedBox(
-          width: imageWidth,
-          height: imageHeight,
-          child: Image.network(pokemonImageUrl),
-        ),
-        const VerticalSpace(spacing: gridContentSpacing),
-        Text(pokemonName),
-      ],
+    return GestureDetector(
+      onTap: () => _navigateToPokemonDetailsPage(context),
+      child: Column(
+        children: [
+          SizedBox(
+            width: imageWidth,
+            height: imageHeight,
+            child: Image.network(pokemon.url.toPokemonImageUrl),
+          ),
+          const VerticalSpace(spacing: gridContentSpacing),
+          Text(pokemonName),
+        ],
+      ),
+    );
+  }
+
+  _navigateToPokemonDetailsPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => PokemonDetailsConnector(pokemon: pokemon),
+      ),
     );
   }
 }
